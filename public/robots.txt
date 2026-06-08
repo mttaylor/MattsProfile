@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# AI and LLM crawlers — this is a professional portfolio and resume
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
+Sitemap: https://engineermatt.com/sitemap.xml

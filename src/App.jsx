@@ -45,25 +45,66 @@ function Tag({ children, variant = 'default' }) {
 
 function Hero() {
   return (
-    <section id="top" className="hero">
+    <section id="top" className="hero" itemScope itemType="https://schema.org/Person">
+      <meta itemProp="name" content="Matthew Taylor" />
+      <meta itemProp="email" content="MattTaylor.CE@gmail.com" />
+      <meta itemProp="jobTitle" content="Senior Release Manager & Strategic Lead" />
       <div className="hero__inner container">
-        <p className="hero__pre mono">
-          <span className="teal">// </span>
-          release engineer · ai strategist · platform builder
-        </p>
-        <h1 className="hero__headline">
-          I build the systems,<br />
-          the policies, and the<br />
-          <span className="teal">AI that ships them.</span>
-        </h1>
-        <p className="hero__sub">
-          Strategic technology leader based in Boise, Idaho. Over a decade turning
-          engineering chaos into governed, automated, high-velocity delivery.
-        </p>
-        <div className="hero__cta">
-          <a href="#work" className="btn btn--primary">View My Work</a>
-          <a href="#connect" className="btn btn--ghost">Get in Touch</a>
+        <div className="hero__content">
+          <p className="hero__pre mono">
+            <span className="teal">// </span>
+            release engineer · ai strategist · platform builder
+          </p>
+          <h1 className="hero__headline">
+            I build the systems,<br />
+            the policies, and the<br />
+            <span className="teal">AI that ships them.</span>
+          </h1>
+          <p className="hero__sub" itemProp="description">
+            Strategic technology leader based in Boise, Idaho. Over a decade turning
+            engineering chaos into governed, automated, high-velocity delivery.
+          </p>
+          <div className="hero__cta">
+            <a href="#work" className="btn btn--primary">View My Work</a>
+            <a href="#connect" className="btn btn--ghost">Get in Touch</a>
+          </div>
         </div>
+
+        <aside className="hero__side" aria-label="Availability and key metrics">
+          <div className="hero__status-card">
+            <div className="hero__status-badge">
+              <span className="hero__status-dot" aria-hidden="true" />
+              <span className="hero__status-text">Open to Opportunities</span>
+            </div>
+            <div className="hero__status-details">
+              <p className="hero__status-line">
+                <span className="teal mono" aria-hidden="true">→</span>
+                <span itemProp="address">Boise, Idaho · Remote OK</span>
+              </p>
+              <p className="hero__status-line">
+                <span className="teal mono" aria-hidden="true">→</span>
+                Senior Leadership · Director · Consulting
+              </p>
+              <p className="hero__status-line">
+                <span className="teal mono" aria-hidden="true">→</span>
+                AI Tooling · SDLC Governance · Platform Eng
+              </p>
+            </div>
+          </div>
+          <div className="hero__metrics">
+            {[
+              { value: '13+', label: 'Years Experience' },
+              { value: '300+', label: 'Enterprise Clients' },
+              { value: '800+', label: 'Environments' },
+              { value: '99.99%', label: 'Deploy SLA' },
+            ].map(s => (
+              <div key={s.label} className="hero__metric">
+                <span className="hero__metric-value teal mono">{s.value}</span>
+                <span className="hero__metric-label">{s.label}</span>
+              </div>
+            ))}
+          </div>
+        </aside>
       </div>
       <div className="hero__grid-overlay" aria-hidden="true" />
     </section>
@@ -79,7 +120,7 @@ function Stats() {
     { value: '25%', label: 'Reduction in Deploy Cycles' },
   ]
   return (
-    <div className="stats container">
+    <div className="stats container" aria-label="Career highlights">
       {stats.map(s => (
         <div key={s.label} className="stats__item">
           <span className="stats__value teal mono">{s.value}</span>
@@ -137,17 +178,17 @@ function Work() {
       <h2 className="section__title">What I've Shipped</h2>
       <div className="work-grid">
         {WORK.map(item => (
-          <article key={item.title} className="work-card">
+          <article key={item.title} className="work-card" itemScope itemType="https://schema.org/CreativeWork">
             <div className="work-card__header">
               <div>
-                <h3 className="work-card__title">{item.title}</h3>
-                <p className="work-card__company mono">{item.company}</p>
+                <h3 className="work-card__title" itemProp="name">{item.title}</h3>
+                <p className="work-card__company mono" itemProp="producer">{item.company}</p>
               </div>
               {item.highlight && (
                 <span className="work-card__highlight">★ {item.highlight}</span>
               )}
             </div>
-            <p className="work-card__desc">{item.desc}</p>
+            <p className="work-card__desc" itemProp="description">{item.desc}</p>
             <div className="work-card__tags">
               {item.tags.map(t => <Tag key={t}>{t}</Tag>)}
             </div>
@@ -200,6 +241,7 @@ const CAREER = [
     company: 'Unqork',
     location: 'New York, NY (Remote)',
     period: 'May 2023 – Present',
+    startDate: '2023-05',
     bullets: [
       'Authored "The Path to Production" SDLC policies for 300+ clients and 800+ environments',
       'Integrated Claude, Gemini, and CoPilot into release lifecycle — boosting velocity and accuracy',
@@ -213,6 +255,8 @@ const CAREER = [
     company: 'Evidation Health Incorporated',
     location: 'Santa Barbara, CA (Remote)',
     period: 'Feb 2020 – May 2023',
+    startDate: '2020-02',
+    endDate: '2023-05',
     bullets: [
       'Designed mobile automation framework from scratch — increased speed and coverage significantly',
       'Built end-to-end data pipeline testing using Snowflake, DBT, Airflow, and GitHub Actions',
@@ -225,6 +269,8 @@ const CAREER = [
     company: 'Opto 22',
     location: 'Temecula, CA',
     period: 'Mar 2013 – Feb 2020',
+    startDate: '2013-03',
+    endDate: '2020-02',
     bullets: [
       'Built and maintained 100+ VM cluster using VMware vSphere for CI/CD via Jenkins',
       'Introduced DevOps best practices: Ansible, Docker, Selenium on legacy release processes',
@@ -240,7 +286,15 @@ function Career() {
       <h2 className="section__title">Career</h2>
       <div className="timeline">
         {CAREER.map((job, i) => (
-          <div key={job.company} className="timeline__item">
+          <div
+            key={job.company}
+            className="timeline__item"
+            itemScope
+            itemType="https://schema.org/OrganizationRole"
+          >
+            <meta itemProp="roleName" content={job.role} />
+            <meta itemProp="startDate" content={job.startDate} />
+            {job.endDate && <meta itemProp="endDate" content={job.endDate} />}
             <div className="timeline__marker">
               <div className="timeline__dot" />
               {i < CAREER.length - 1 && <div className="timeline__line" />}
@@ -250,7 +304,7 @@ function Career() {
                 <div>
                   <h3 className="timeline__role">{job.role}</h3>
                   <p className="timeline__company">
-                    <span className="teal">{job.company}</span>
+                    <span className="teal" itemProp="memberOf">{job.company}</span>
                     <span className="text-muted"> · {job.location}</span>
                   </p>
                 </div>
@@ -258,7 +312,7 @@ function Career() {
               </div>
               <ul className="timeline__bullets">
                 {job.bullets.map(b => (
-                  <li key={b}><span className="teal mono">→</span> {b}</li>
+                  <li key={b}><span className="teal mono" aria-hidden="true">→</span> {b}</li>
                 ))}
               </ul>
             </div>
@@ -317,24 +371,24 @@ function Skills() {
       <div className="creds">
         <h3 className="creds__title">Education & Certifications</h3>
         <div className="creds__list">
-          <div className="cred-item">
-            <span className="teal mono">★</span>
+          <div className="cred-item" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+            <span className="teal mono" aria-hidden="true">★</span>
             <div>
-              <p className="cred-item__name">B.S. Computer Engineering</p>
+              <p className="cred-item__name" itemProp="name">B.S. Computer Engineering</p>
               <p className="cred-item__detail">Cal Poly Pomona · 2012</p>
             </div>
           </div>
-          <div className="cred-item">
-            <span className="teal mono">★</span>
+          <div className="cred-item" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+            <span className="teal mono" aria-hidden="true">★</span>
             <div>
-              <p className="cred-item__name">AWS Certified Cloud Practitioner</p>
+              <p className="cred-item__name" itemProp="name">AWS Certified Cloud Practitioner</p>
               <p className="cred-item__detail">Amazon Web Services</p>
             </div>
           </div>
-          <div className="cred-item">
-            <span className="teal mono">★</span>
+          <div className="cred-item" itemScope itemType="https://schema.org/EducationalOccupationalCredential">
+            <span className="teal mono" aria-hidden="true">★</span>
             <div>
-              <p className="cred-item__name">Novice Builder Badge</p>
+              <p className="cred-item__name" itemProp="name">Novice Builder Badge</p>
               <p className="cred-item__detail">Unqork</p>
             </div>
           </div>
@@ -350,8 +404,8 @@ function Connect() {
       <p className="section__pre mono"><span className="teal">// </span>get in touch</p>
       <h2 className="section__title">Let's Talk</h2>
       <p className="connect__sub">
-        Open to senior leadership roles, consulting, and strategic advisory work in AI tooling,
-        SDLC governance, and platform engineering.
+        Open to senior leadership roles, director-level positions, consulting, and strategic advisory
+        work in AI tooling, SDLC governance, and platform engineering. Remote-friendly.
       </p>
       <div className="connect__links">
         <a href="mailto:MattTaylor.CE@gmail.com" className="btn btn--primary">
