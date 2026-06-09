@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import profileImg from './assets/profile.jpg'
 
-const NAV_LINKS = ['Work', 'Philosophy', 'Career', 'Skills', 'Connect']
+const NAV_LINKS = ['Work', 'Projects', 'Philosophy', 'Career', 'Skills', 'Connect']
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
@@ -198,6 +198,84 @@ function Work() {
             </div>
           </article>
         ))}
+      </div>
+    </section>
+  )
+}
+
+function Projects() {
+  return (
+    <section id="projects" className="section container">
+      <p className="section__pre mono"><span className="teal">// </span>side projects</p>
+      <h2 className="section__title">What I'm Building</h2>
+      <div className="projects-grid">
+
+        <article className="project-card project-card--featured">
+          <div className="project-card__header">
+            <div>
+              <h3 className="project-card__title">Deploy or Die</h3>
+              <p className="project-card__domain mono teal">deployordie.ai</p>
+            </div>
+            <span className="project-card__badge">Founder</span>
+          </div>
+          <p className="project-card__desc">
+            A no-fluff newsletter and content platform built for engineers who ship.
+            Four topics — AI Tools, DevOps &amp; Release Engineering, Crypto &amp; Web3, and Making Money With Tech —
+            filtered through one brutal standard: <em>does it actually work?</em> No theory, no hype, no padding.
+          </p>
+          <p className="project-card__desc">
+            Built as an extension of 13+ years at the deploy boundary — the same mindset that went into
+            governing 800+ environments now goes into every issue.
+          </p>
+          <div className="project-card__tags">
+            <Tag>Newsletter</Tag>
+            <Tag>AI Tooling</Tag>
+            <Tag>DevOps</Tag>
+            <Tag>Release Engineering</Tag>
+            <Tag>Content Platform</Tag>
+          </div>
+          <div className="project-card__links">
+            <a href="https://deployordie.ai" target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">
+              Visit Site →
+            </a>
+            <a href="https://www.linkedin.com/company/deployordie" target="_blank" rel="noreferrer" className="btn btn--ghost btn--sm">
+              LinkedIn →
+            </a>
+          </div>
+        </article>
+
+        <article className="project-card">
+          <div className="project-card__header">
+            <div>
+              <h3 className="project-card__title">Cullit.io</h3>
+              <p className="project-card__domain mono teal">cullit.io</p>
+            </div>
+            <span className="project-card__badge project-card__badge--oss">Open Source</span>
+          </div>
+          <p className="project-card__desc">
+            Started as a full-featured SaaS product: AI-powered release notes generated automatically
+            from git commits, pull requests, and ticket systems (Jira, Linear, GitHub). Supports
+            Claude, Gemini, OpenAI, and Ollama — with audience modes for engineers, customers, and executives.
+          </p>
+          <p className="project-card__desc">
+            Made it open source (MIT) to give back to the community. Runs via CLI, GitHub Actions, or API
+            and publishes directly to GitHub Releases, Slack, Discord, Confluence, and Notion.
+          </p>
+          <div className="project-card__tags">
+            <Tag>AI-Assisted Dev</Tag>
+            <Tag>Open Source</Tag>
+            <Tag>Release Notes</Tag>
+            <Tag>GitHub Actions</Tag>
+            <Tag>Claude</Tag>
+            <Tag>SaaS → OSS</Tag>
+          </div>
+          <div className="project-card__links">
+            <a href="https://cullit.io" target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">
+              Visit Site →
+            </a>
+          </div>
+        </article>
+
       </div>
     </section>
   )
@@ -456,6 +534,7 @@ export default function App() {
         <Hero />
         <Stats />
         <Work />
+        <Projects />
         <Philosophy />
         <Career />
         <Skills />
