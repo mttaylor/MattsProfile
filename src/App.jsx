@@ -79,7 +79,7 @@ function Hero() {
             <span className="teal">AI that ships them.</span>
           </h1>
           <p className="hero__sub" itemProp="description">
-            Strategic technology leader based in Boise, Idaho. Over a decade turning
+            Strategic technology leader based in Star, Idaho. Over a decade turning
             engineering chaos into governed, automated, high-velocity delivery.
           </p>
           <div className="hero__cta">
@@ -100,7 +100,7 @@ function Hero() {
             <div className="hero__status-details">
               <p className="hero__status-line">
                 <span className="teal mono" aria-hidden="true">→</span>
-                <span itemProp="address">Boise, Idaho · Remote OK</span>
+                <span itemProp="address">Star, Idaho · Remote OK</span>
               </p>
               <p className="hero__status-line">
                 <span className="teal mono" aria-hidden="true">→</span>
@@ -138,7 +138,7 @@ function Intro() {
       <div className="intro-strip__inner container">
         <div className="intro-strip__identity">
           <h2 className="intro-strip__name">Matthew Taylor</h2>
-          <p className="intro-strip__title mono">Senior Release Manager &amp; AI Strategist · Boise, Idaho</p>
+          <p className="intro-strip__title mono">Senior Release Manager &amp; AI Strategist · Star, Idaho</p>
         </div>
         <div className="intro-strip__contact">
           <CopyChip value="MattTaylor.CE@gmail.com" display="MattTaylor.CE@gmail.com" className="intro-strip__chip" />
@@ -529,7 +529,7 @@ function Connect() {
         </div>
         <div className="contact-card">
           <span className="contact-card__label mono">Location</span>
-          <span className="contact-card__value">Boise, Idaho · Remote OK</span>
+          <span className="contact-card__value">Star, Idaho · Remote OK</span>
         </div>
       </div>
       <div className="connect__links">
@@ -559,7 +559,7 @@ function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <span className="nav__logo-name teal">Matt Taylor</span>
-        <p className="footer__copy">© {new Date().getFullYear()} Matthew Taylor · Boise, Idaho</p>
+        <p className="footer__copy">© {new Date().getFullYear()} Matthew Taylor · Star, Idaho</p>
         <p className="footer__copy text-muted">Built with React + Vite</p>
       </div>
     </footer>
