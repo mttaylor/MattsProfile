@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import profileImg from './assets/profile.jpg'
 
 const NAV_LINKS = ['Work', 'Philosophy', 'Career', 'Skills', 'Connect']
 
@@ -71,6 +72,9 @@ function Hero() {
         </div>
 
         <aside className="hero__side" aria-label="Availability and key metrics">
+          <div className="hero__photo-wrap">
+            <img src={profileImg} alt="Matthew Taylor" className="hero__photo" />
+          </div>
           <div className="hero__status-card">
             <div className="hero__status-badge">
               <span className="hero__status-dot" aria-hidden="true" />

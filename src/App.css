@@ -239,6 +239,21 @@
 }
 
 /* ─── Hero Side Panel ───────────────────────────────────────────────────────── */
+.hero__photo-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.hero__photo {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 3px solid var(--teal);
+  box-shadow: 0 0 32px rgba(20, 184, 166, 0.25);
+}
+
 .hero__side {
   display: flex;
   flex-direction: column;
