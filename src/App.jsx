@@ -4,6 +4,21 @@ import profileImg from './assets/profile.jpg'
 
 const NAV_LINKS = ['Work', 'Projects', 'Philosophy', 'Career', 'Skills', 'Connect']
 
+function CopyChip({ value, display, className = '' }) {
+  const [copied, setCopied] = useState(false)
+  const copy = () => {
+    navigator.clipboard.writeText(value)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 2000)
+  }
+  return (
+    <button className={`copy-chip ${className}`} onClick={copy} title={`Copy ${value}`}>
+      <span>{copied ? 'Copied!' : display}</span>
+      <span className="copy-chip__icon">{copied ? '✓' : '⎘'}</span>
+    </button>
+  )
+}
+
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -16,10 +31,12 @@ function Nav() {
 
   return (
     <nav className={`nav ${scrolled ? 'nav--scrolled' : ''}`}>
-      <a href="#top" className="nav__logo">
-        <span className="mono teal">mt</span>
-        <span className="nav__logo-dot" />
-      </a>
+      <div className="nav__brand">
+        <a href="#top" className="nav__logo">
+          <span className="nav__logo-name">Matt Taylor</span>
+        </a>
+        <CopyChip value="MattTaylor.CE@gmail.com" display="MattTaylor.CE@gmail.com" className="nav__email-chip" />
+      </div>
       <ul className={`nav__links ${menuOpen ? 'nav__links--open' : ''}`}>
         {NAV_LINKS.map(link => (
           <li key={link}>
@@ -115,22 +132,20 @@ function Hero() {
   )
 }
 
-function Stats() {
-  const stats = [
-    { value: '13+', label: 'Years Experience' },
-    { value: '300+', label: 'Clients Served' },
-    { value: '800+', label: 'Environments Managed' },
-    { value: '99.99%', label: 'Deployment Success SLA' },
-    { value: '25%', label: 'Reduction in Deploy Cycles' },
-  ]
+function Intro() {
   return (
-    <div className="stats container" aria-label="Career highlights">
-      {stats.map(s => (
-        <div key={s.label} className="stats__item">
-          <span className="stats__value teal mono">{s.value}</span>
-          <span className="stats__label">{s.label}</span>
+    <div className="intro-strip">
+      <div className="intro-strip__inner container">
+        <div className="intro-strip__identity">
+          <h2 className="intro-strip__name">Matthew Taylor</h2>
+          <p className="intro-strip__title mono">Senior Release Manager &amp; AI Strategist · Boise, Idaho</p>
         </div>
-      ))}
+        <div className="intro-strip__contact">
+          <CopyChip value="MattTaylor.CE@gmail.com" display="MattTaylor.CE@gmail.com" className="intro-strip__chip" />
+          <CopyChip value="208-994-8580" display="208-994-8580" className="intro-strip__chip" />
+          <a href="tel:2089948580" className="intro-strip__call btn btn--ghost btn--sm">Call →</a>
+        </div>
+      </div>
     </div>
   )
 }
@@ -489,15 +504,40 @@ function Connect() {
         Open to senior leadership roles, director-level positions, consulting, and strategic advisory
         work in AI tooling, SDLC governance, and platform engineering. Remote-friendly.
       </p>
+      <div className="contact-cards">
+        <div className="contact-card">
+          <span className="contact-card__label mono">Name</span>
+          <span className="contact-card__value">Matthew Taylor</span>
+        </div>
+        <div className="contact-card">
+          <span className="contact-card__label mono">Email</span>
+          <div className="contact-card__row">
+            <a href="mailto:MattTaylor.CE@gmail.com" className="contact-card__value contact-card__link">
+              MattTaylor.CE@gmail.com
+            </a>
+            <CopyChip value="MattTaylor.CE@gmail.com" display="Copy" className="contact-card__copy" />
+          </div>
+        </div>
+        <div className="contact-card">
+          <span className="contact-card__label mono">Phone</span>
+          <div className="contact-card__row">
+            <a href="tel:2089948580" className="contact-card__value contact-card__link">
+              208-994-8580
+            </a>
+            <CopyChip value="208-994-8580" display="Copy" className="contact-card__copy" />
+          </div>
+        </div>
+        <div className="contact-card">
+          <span className="contact-card__label mono">Location</span>
+          <span className="contact-card__value">Boise, Idaho · Remote OK</span>
+        </div>
+      </div>
       <div className="connect__links">
-        <a href="mailto:MattTaylor.CE@gmail.com" className="btn btn--primary">
-          MattTaylor.CE@gmail.com →
-        </a>
         <a
           href="https://www.linkedin.com/in/"
           target="_blank"
           rel="noreferrer"
-          className="btn btn--ghost"
+          className="btn btn--primary"
         >
           LinkedIn →
         </a>
@@ -518,7 +558,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="container footer__inner">
-        <span className="mono teal">mt</span>
+        <span className="nav__logo-name teal">Matt Taylor</span>
         <p className="footer__copy">© {new Date().getFullYear()} Matthew Taylor · Boise, Idaho</p>
         <p className="footer__copy text-muted">Built with React + Vite</p>
       </div>
@@ -532,7 +572,7 @@ export default function App() {
       <Nav />
       <main>
         <Hero />
-        <Stats />
+        <Intro />
         <Work />
         <Projects />
         <Philosophy />
