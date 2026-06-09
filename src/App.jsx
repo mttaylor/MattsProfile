@@ -420,7 +420,7 @@ function Connect() {
           LinkedIn →
         </a>
         <a
-          href="https://github.com/rivalize"
+          href="https://github.com/mttaylor"
           target="_blank"
           rel="noreferrer"
           className="btn btn--ghost"
