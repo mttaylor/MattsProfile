@@ -79,7 +79,7 @@ function Hero() {
             <span className="teal">AI that ships them.</span>
           </h1>
           <p className="hero__sub" itemProp="description">
-            Strategic technology leader based in Star, Idaho. Over a decade turning
+            Strategic technology leader based in Star, Idaho. Over 15 years turning
             engineering chaos into governed, automated, high-velocity delivery.
           </p>
           <div className="hero__cta">
@@ -114,7 +114,7 @@ function Hero() {
           </div>
           <div className="hero__metrics">
             {[
-              { value: '13+', label: 'Years Experience' },
+              { value: '15+', label: 'Years Experience' },
               { value: '300+', label: 'Enterprise Clients' },
               { value: '800+', label: 'Environments' },
               { value: '99.99%', label: 'Deploy SLA' },
@@ -239,7 +239,7 @@ function Projects() {
             filtered through one brutal standard: <em>does it actually work?</em> No theory, no hype, no padding.
           </p>
           <p className="project-card__desc">
-            Built as an extension of 13+ years at the deploy boundary — the same mindset that went into
+            Built as an extension of 15+ years at the deploy boundary — the same mindset that went into
             governing 800+ environments now goes into every issue.
           </p>
           <div className="project-card__tags">
