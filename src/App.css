@@ -224,6 +224,10 @@
   color: var(--text-bright);
 }
 
+.hero__headline .teal {
+  white-space: nowrap;
+}
+
 .hero__sub {
   font-size: 19px;
   color: var(--text-muted);
