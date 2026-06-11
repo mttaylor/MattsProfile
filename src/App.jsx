@@ -75,8 +75,8 @@ function Hero() {
           </p>
           <h1 className="hero__headline">
             I build the systems,<br />
-            the policies, and the<br />
-            <span className="teal">AI that ships them.</span>
+            the policies, and<br />
+            the <span className="teal">AI that ships them.</span>
           </h1>
           <p className="hero__sub" itemProp="description">
             Strategic technology leader based in Star, Idaho. Over 15 years turning
