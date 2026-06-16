@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import './App.css'
 import profileImg from './assets/profile.jpg'
 
-const NAV_LINKS = ['Work', 'Projects', 'Philosophy', 'Career', 'Skills', 'Connect']
+const NAV_LINKS = ['Work', 'Projects', 'Philosophy', 'Career', 'Recommendations', 'Skills', 'Connect']
 
 function CopyChip({ value, display, className = '' }) {
   const [copied, setCopied] = useState(false)
@@ -421,6 +421,49 @@ function Career() {
   )
 }
 
+const RECOMMENDATIONS = [
+  {
+    name: 'Ariane Coffin',
+    title: 'Engineering Leader · Test Automation',
+    relationship: 'Worked with Matt at Evidation Health',
+    quote: 'I worked with Matt at Evidation Health, where he served as Release Manager and QA Manager while I was on the test automation team. Matt brought structure and reliability to our release process, made significant improvements to our CI/CD pipeline, and approached every problem with genuine thoughtfulness. He was always communicative and had a real knack for cross-functional coordination. I would be thrilled to work with him again.',
+  },
+  {
+    name: 'Aaron Freeman',
+    title: 'CTO & Co-Founder at Upwell',
+    relationship: 'Worked with Matt at Evidation Health',
+    quote: 'Matthew is an expert in software development and release processes. We worked together at Evidation to build reliable and repeatable delivery pipelines. His skills are super relevant in this age of AI driven development, where continuous delivery is a must and building the pipeline is as important as building the software itself. If you want to ship fast and reliably, you want Matthew on your team.',
+  },
+  {
+    name: 'Daniel Min',
+    title: 'Principal Security Engineer at SS&C Technology',
+    relationship: 'Worked with Matt at Unqork',
+    quote: 'I worked closely with Matt at Unqork when he was our Release Manager. He was always on top of our release schedule and amazing at making people accountable for what they are responsible for in the releases. Matt was very easy to work with and loved to share his knowledge and learn things from others as well. I highly recommend Matt for any type of QA or release management work.',
+  },
+]
+
+function Recommendations() {
+  return (
+    <section id="recommendations" className="section container">
+      <p className="section__pre mono"><span className="teal">// </span>what colleagues say</p>
+      <h2 className="section__title">Recommendations</h2>
+      <div className="recs-grid">
+        {RECOMMENDATIONS.map(rec => (
+          <figure key={rec.name} className="rec-card">
+            <span className="rec-card__mark" aria-hidden="true">&ldquo;</span>
+            <blockquote className="rec-card__quote">{rec.quote}</blockquote>
+            <figcaption className="rec-card__author">
+              <span className="rec-card__name">{rec.name}</span>
+              <span className="rec-card__title">{rec.title}</span>
+              <span className="rec-card__rel mono">{rec.relationship}</span>
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 const SKILLS = [
   {
     category: 'AI & LLM Integration',
@@ -578,6 +621,7 @@ export default function App() {
         <Projects />
         <Philosophy />
         <Career />
+        <Recommendations />
         <Skills />
         <Connect />
       </main>
