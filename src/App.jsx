@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import profileImg from './assets/profile.jpg'
+import projectExampleCullitImg from './assets/project-example-cullit.png'
 
 const NAV_LINKS = ['Work', 'Projects', 'Philosophy', 'Career', 'Skills', 'Connect']
 
@@ -297,7 +298,7 @@ function Projects() {
         <h3 className="examples__title">Project Examples</h3>
         <div className="example-single">
           <img
-            src="/work-example-dashboard.svg"
+            src={projectExampleCullitImg}
             alt="Project example screen capture"
             loading="lazy"
           />
