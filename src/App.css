@@ -705,6 +705,75 @@
   font-size: 13px;
 }
 
+.examples {
+  margin-top: 48px;
+}
+
+.examples__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.examples__title {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-bright);
+}
+
+.examples__sub {
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.examples__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+@media (max-width: 900px) {
+  .examples__grid { grid-template-columns: 1fr; }
+}
+
+.example-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.example-card__media {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+  background: #02060f;
+}
+
+.example-card__media img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.example-card__caption {
+  padding: 16px 18px 18px;
+}
+
+.example-card__title {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-bright);
+  margin-bottom: 4px;
+}
+
+.example-card__subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
 /* ─── Philosophy ────────────────────────────────────────────────────────────── */
 .philosophy-grid {
   display: grid;

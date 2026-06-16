@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import profileImg from './assets/profile.jpg'
+import cullitCaptureImg from './assets/cullit-capture.png'
 
 const NAV_LINKS = ['Work', 'Projects', 'Philosophy', 'Career', 'Skills', 'Connect']
 
@@ -190,6 +191,21 @@ const WORK = [
   },
 ]
 
+const WORK_EXAMPLES = [
+  {
+    title: 'Cullit.io Landing Experience',
+    subtitle: 'Live product surface and positioning',
+    image: cullitCaptureImg,
+    alt: 'Cullit.io homepage screenshot',
+  },
+  {
+    title: 'Environment Version Dashboard',
+    subtitle: 'Internal release and environment observability UI',
+    image: '/work-example-dashboard.svg',
+    alt: 'Dashboard screenshot showing environment metrics and filters',
+  },
+]
+
 function Work() {
   return (
     <section id="work" className="section container">
@@ -291,6 +307,26 @@ function Projects() {
           </div>
         </article>
 
+      </div>
+
+      <div className="examples">
+        <div className="examples__header">
+          <h3 className="examples__title">Screen Captures</h3>
+          <p className="examples__sub">Real UI examples from shipped work.</p>
+        </div>
+        <div className="examples__grid">
+          {WORK_EXAMPLES.map(example => (
+            <figure key={example.title} className="example-card">
+              <div className="example-card__media">
+                <img src={example.image} alt={example.alt} loading="lazy" />
+              </div>
+              <figcaption className="example-card__caption">
+                <p className="example-card__title">{example.title}</p>
+                <p className="example-card__subtitle">{example.subtitle}</p>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   )
