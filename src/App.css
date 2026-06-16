@@ -705,31 +705,6 @@
   font-size: 13px;
 }
 
-.examples {
-  margin-top: 48px;
-}
-
-.examples__title {
-  font-size: 22px;
-  font-weight: 600;
-  color: var(--text-bright);
-  margin-bottom: 16px;
-}
-
-.example-single {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  overflow: hidden;
-}
-
-.example-single img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background: #02060f;
-}
-
 /* ─── Philosophy ────────────────────────────────────────────────────────────── */
 .philosophy-grid {
   display: grid;
