@@ -244,34 +244,48 @@ function Projects() {
         <article className="project-card project-card--featured">
           <div className="project-card__header">
             <div>
-              <h3 className="project-card__title">Deploy or Die</h3>
-              <p className="project-card__domain mono teal">deployordie.ai</p>
+              <h3 className="project-card__title">Calop</h3>
+              <p className="project-card__domain mono teal">Engineering operations coordination</p>
             </div>
-            <span className="project-card__badge">Founder</span>
+            <span className="project-card__badge">In Development</span>
           </div>
           <p className="project-card__desc">
-            A no-fluff newsletter and content platform built for engineers who ship.
-            Four topics — AI Tools, DevOps &amp; Release Engineering, Crypto &amp; Web3, and Making Money With Tech —
-            filtered through one brutal standard: <em>does it actually work?</em> No theory, no hype, no padding.
-          </p>
-          <p className="project-card__desc">
-            Built as an extension of 15+ years at the deploy boundary — the same mindset that went into
-            governing 800+ environments now goes into every issue.
+            An operations coordination workspace for engineering teams. I’m building a clearer
+            picture of release readiness, change windows, owners, and blockers across existing
+            systems — so teams can see what’s ready, what’s blocked, and who can safely act next.
           </p>
           <div className="project-card__tags">
+            <Tag>Release Readiness</Tag>
+            <Tag>Engineering Operations</Tag>
+            <Tag>Change Coordination</Tag>
+            <Tag>Product Development</Tag>
+          </div>
+        </article>
+
+        <article className="project-card project-card--featured">
+          <div className="project-card__header">
+            <div>
+              <h3 className="project-card__title">Deploy or Die</h3>
+              <p className="project-card__domain mono teal">Retired project</p>
+            </div>
+            <span className="project-card__badge">Past Project</span>
+          </div>
+          <p className="project-card__desc">
+            Created a no-fluff newsletter and content platform for engineers who ship, covering
+            AI tools, DevOps and release engineering, crypto and Web3, and making money with tech.
+            The project is retired, but the product-building and editorial work remain part of my portfolio.
+          </p>
+          <p className="project-card__desc">
+            Built around a practical standard: focus on what works, explain it clearly, and leave
+            out the hype. The work brought together product development, technical storytelling,
+            and an engineer’s perspective on shipping.
+          </p>
+          <div className="project-card__tags">
+            <Tag>Past Project</Tag>
             <Tag>Newsletter</Tag>
             <Tag>AI Tooling</Tag>
-            <Tag>DevOps</Tag>
             <Tag>Release Engineering</Tag>
-            <Tag>Content Platform</Tag>
-          </div>
-          <div className="project-card__links">
-            <a href="https://deployordie.ai" target="_blank" rel="noreferrer" className="btn btn--primary btn--sm">
-              Visit Site →
-            </a>
-            <a href="https://www.linkedin.com/company/deployordie" target="_blank" rel="noreferrer" className="btn btn--ghost btn--sm">
-              LinkedIn →
-            </a>
+            <Tag>Technical Content</Tag>
           </div>
         </article>
 
