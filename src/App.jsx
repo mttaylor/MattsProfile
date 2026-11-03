@@ -66,12 +66,12 @@ function Hero() {
     <section id="top" className="hero" itemScope itemType="https://schema.org/Person">
       <meta itemProp="name" content="Matthew Taylor" />
       <meta itemProp="email" content="MattTaylor.CE@gmail.com" />
-      <meta itemProp="jobTitle" content="Senior Release Manager & Strategic Lead" />
+      <meta itemProp="jobTitle" content="Developer Experience and Delivery Manager" />
       <div className="hero__inner container">
         <div className="hero__content">
           <p className="hero__pre mono">
             <span className="teal">// </span>
-            release engineer · ai strategist · platform builder
+            developer experience · delivery engineering · AI in the SDLC
           </p>
           <h1 className="hero__headline">
             I build the systems,<br />
@@ -79,8 +79,10 @@ function Hero() {
             <span className="teal">the AI that ships them.</span>
           </h1>
           <p className="hero__sub" itemProp="description">
-            Strategic technology leader based in Star, Idaho. Over 15 years turning
-            engineering chaos into governed, automated, high-velocity delivery.
+            Strategic technology leader based in Boise, Idaho. I lead Developer Experience
+            and Delivery at Unqork, bringing 15+ years in engineering to a faster, safer path
+            from commit to customer. I build the systems and practices that help engineers
+            ship with confidence, and measure success by cycle time and real-world results.
           </p>
           <div className="hero__cta">
             <a href="#work" className="btn btn--primary">View My Work</a>
@@ -88,36 +90,36 @@ function Hero() {
           </div>
         </div>
 
-        <aside className="hero__side" aria-label="Availability and key metrics">
+        <aside className="hero__side" aria-label="Current focus and key metrics">
           <div className="hero__photo-wrap">
             <img src={profileImg} alt="Matthew Taylor" className="hero__photo" />
           </div>
           <div className="hero__status-card">
             <div className="hero__status-badge">
               <span className="hero__status-dot" aria-hidden="true" />
-              <span className="hero__status-text">Open to Opportunities</span>
+              <span className="hero__status-text">Current Focus</span>
             </div>
             <div className="hero__status-details">
               <p className="hero__status-line">
                 <span className="teal mono" aria-hidden="true">→</span>
-                <span itemProp="address">Star, Idaho · Remote OK</span>
+                <span itemProp="address">Boise, Idaho</span>
               </p>
               <p className="hero__status-line">
                 <span className="teal mono" aria-hidden="true">→</span>
-                Senior Leadership · Director · Consulting
+                Preview environments · hardened builds
               </p>
               <p className="hero__status-line">
                 <span className="teal mono" aria-hidden="true">→</span>
-                AI Tooling · SDLC Governance · Platform Eng
+                Measured AI · safe, traceable delivery
               </p>
             </div>
           </div>
           <div className="hero__metrics">
             {[
-              { value: '15+', label: 'Years Experience' },
-              { value: '300+', label: 'Enterprise Clients' },
-              { value: '800+', label: 'Environments' },
-              { value: '99.99%', label: 'Deploy SLA' },
+              { value: '95%', label: 'On-target releases' },
+              { value: '50%', label: 'Lower CI delivery cost' },
+              { value: '25% vs 3%', label: 'High- vs low-risk PR fixes' },
+              { value: '$0.16', label: 'Median AI review cost' },
             ].map(s => (
               <div key={s.label} className="hero__metric">
                 <span className="hero__metric-value teal mono">{s.value}</span>
@@ -138,7 +140,7 @@ function Intro() {
       <div className="intro-strip__inner container">
         <div className="intro-strip__identity">
           <h2 className="intro-strip__name">Matthew Taylor</h2>
-          <p className="intro-strip__title mono">Senior Release Manager &amp; AI Strategist · Star, Idaho</p>
+          <p className="intro-strip__title mono">Developer Experience and Delivery Manager · Boise, Idaho</p>
         </div>
         <div className="intro-strip__contact">
           <CopyChip value="MattTaylor.CE@gmail.com" display="MattTaylor.CE@gmail.com" className="intro-strip__chip" />
@@ -152,11 +154,25 @@ function Intro() {
 
 const WORK = [
   {
+    title: 'AI Pull Request Review Assistant',
+    company: 'Unqork',
+    desc: 'Built an AI review assistant for every monorepo PR. It maps how 79 packages connect and which API routes and data models a change touches, then points reviewers to likely risks and the right reviewers. High-risk PRs needed a later fix 25% of the time, versus 3% for low-risk PRs; median review cost is about $0.16. A purpose-built secret scanner redacts credentials, and the assistant never runs PR code.',
+    tags: ['AI Code Review', 'Monorepo', 'Risk Analysis', 'Security', 'Developer Experience'],
+    highlight: '25% vs 3% follow-up fixes',
+  },
+  {
+    title: 'CI Pipeline Cost and Delivery Improvements',
+    company: 'Unqork',
+    desc: 'Rebuilt and measured the CI delivery pipeline, reducing delivery costs by about 50% over three months. The work supports a simpler path from commit to environment, with faster builds and a hardened artifact for both Commercial and Gov environments.',
+    tags: ['CI/CD', 'Pipeline Optimization', 'Cost Analytics', 'Build Engineering'],
+    highlight: 'About 50% lower delivery cost',
+  },
+  {
     title: 'Path to Production',
     company: 'Unqork',
-    desc: 'Authored and enforced enterprise-wide SDLC release policies standardizing release criteria across 300+ clients and 800+ environments. Reduced late-cycle rework and achieved a 99.99% deployment success SLA.',
+    desc: 'Owned cross-functional release workflows end to end: release lines, feature flags, cohort migrations, and the metadata needed for auditability and traceability. The release process now delivers on target about 95% of the time, with release-related incidents and hotfixes down by more than half.',
     tags: ['Governance', 'SDLC', 'Policy', 'Release Management'],
-    highlight: '99.99% deployment SLA',
+    highlight: '95% on-target releases',
   },
   {
     title: 'Feature Flag Dashboard',
@@ -335,17 +351,44 @@ function Philosophy() {
 
 const CAREER = [
   {
-    role: 'Senior Release Manager & Strategic Lead',
+    role: 'Developer Experience and Delivery Manager',
+    company: 'Unqork',
+    location: 'Boise, Idaho',
+    period: 'May 2026 – Present',
+    startDate: '2026-05',
+    bullets: [
+      'Lead Developer Experience and Delivery in Engineering Operations, owning the path from commit through production to customers',
+      'Building automatic preview environments for every PR and branch, with a smaller set of stable, traceable QA environments',
+      'Driving one hardened build artifact for Commercial and Gov, plus stable, traceable delivery to customer environments',
+      'Cut delivery pipeline costs by about 50% over three months and measure AI tooling against delivery outcomes',
+      'Built a secure AI PR review assistant used on every monorepo PR, with a 25% vs 3% high-risk/low-risk follow-up fix rate',
+    ],
+  },
+  {
+    role: 'Senior Release Manager',
     company: 'Unqork',
     location: 'New York, NY (Remote)',
-    period: 'May 2023 – Present',
-    startDate: '2023-05',
+    period: 'Aug 2025 – Present',
+    startDate: '2025-08',
     bullets: [
-      'Authored "The Path to Production" SDLC policies for 300+ clients and 800+ environments',
-      'Integrated Claude, Gemini, and CoPilot into release lifecycle — boosting velocity and accuracy',
-      'Built internal tooling: Feature Flag Dashboard and Environment Version Data app',
-      'Optimized CI/CD pipelines (Git, AWX, JavaScript) achieving 25% reduction in deploy cycles',
-      'Led cross-functional collaboration across Product, Engineering, QA, Support, and DevOps',
+      'Coordinate release calendars, deployments, feature flags, release lines, and customer cohort migrations',
+      'Maintain release metadata for auditability and traceability across cross-functional delivery workflows',
+      'Improved on-target release delivery to about 95% while reducing release-related incidents and hotfixes by more than half',
+      'Developed AI governance and policy defining permitted use, human review, and compliance and security expectations',
+      'Adopted Graphite and Greptile and built internal tools for feature flags, adoption, and environment version management',
+    ],
+  },
+  {
+    role: 'Release Manager',
+    company: 'Unqork',
+    location: 'Boise, Idaho',
+    period: 'May 2023 – Oct 2026',
+    startDate: '2023-05',
+    endDate: '2026-10',
+    bullets: [
+      'Facilitated release cycles and cross-functional coordination for the platform engineering team',
+      'Maintained release metadata for auditing and certification and administered feature flag procedures',
+      'Shortened release cycles from days or weeks to under 24 hours through process, best practices, and data-driven metrics',
     ],
   },
   {
@@ -385,7 +428,7 @@ function Career() {
       <div className="timeline">
         {CAREER.map((job, i) => (
           <div
-            key={job.company}
+            key={`${job.company}-${job.role}-${job.startDate}`}
             className="timeline__item"
             itemScope
             itemType="https://schema.org/OrganizationRole"
@@ -545,8 +588,9 @@ function Connect() {
       <p className="section__pre mono"><span className="teal">// </span>get in touch</p>
       <h2 className="section__title">Let's Talk</h2>
       <p className="connect__sub">
-        Open to senior leadership roles, director-level positions, consulting, and strategic advisory
-        work in AI tooling, SDLC governance, and platform engineering. Remote-friendly.
+        I lead Developer Experience and Delivery at Unqork, focusing on a faster, safer path from
+        commit to customer: preview environments, efficient CI, traceable delivery, and measured AI
+        tooling. Reach out to connect about developer experience, release engineering, or delivery.
       </p>
       <div className="contact-cards">
         <div className="contact-card">
@@ -573,12 +617,12 @@ function Connect() {
         </div>
         <div className="contact-card">
           <span className="contact-card__label mono">Location</span>
-          <span className="contact-card__value">Star, Idaho · Remote OK</span>
+          <span className="contact-card__value">Boise, Idaho</span>
         </div>
       </div>
       <div className="connect__links">
         <a
-          href="https://www.linkedin.com/in/"
+          href="https://www.linkedin.com/in/matthewttaylor/"
           target="_blank"
           rel="noreferrer"
           className="btn btn--primary"
@@ -603,7 +647,7 @@ function Footer() {
     <footer className="footer">
       <div className="container footer__inner">
         <span className="nav__logo-name teal">Matt Taylor</span>
-        <p className="footer__copy">© {new Date().getFullYear()} Matthew Taylor · Star, Idaho</p>
+        <p className="footer__copy">© {new Date().getFullYear()} Matthew Taylor · Boise, Idaho</p>
         <p className="footer__copy text-muted">Built with React + Vite</p>
       </div>
     </footer>
